@@ -10,7 +10,6 @@ import static org.junit.Assert.*;
 public class BalancedBracketsTest {
 
 
-    //TODO: add 12 total tests here
     @Test // #1
     public void emptyTest() {
         assertEquals(true, true);
@@ -23,14 +22,14 @@ public class BalancedBracketsTest {
         assertTrue(BalancedBrackets.hasBalancedBrackets("someString"));
     }
 
-    @Test // #3 - String with properly aligned brackets  // TODO refactor for indexing
+    @Test // #3 - String with properly aligned brackets
     public void stringWithBalancedBracketsReturnsTrue() {
         Random randomNum = new Random();
         String someString = " s4bP#-_A".repeat(randomNum.nextInt(4));
         assertTrue(BalancedBrackets.hasBalancedBrackets("[" + someString + "]"));
     }
 
-    @Test // #4 - String with properly aligned brackets // TODO refactor for indexing
+    @Test // #4 - String with properly aligned brackets
     public void stringWithUnbalancedBracketsReturnsFalse() {
         Random randomNum = new Random();
         String someString = "6X   (0- ".repeat(randomNum.nextInt(3));
@@ -39,9 +38,11 @@ public class BalancedBracketsTest {
 
     @Test // #5 - String with random number of balanced brackets
     public void stringWithMultipleBalancedBracketsReturnsTrue() {
+        String spec = "a single set or multiple sets of balanced brackets returns true";
         Random randomNum = new Random();
-        String someString = "[]".repeat(randomNum.nextInt(10));
-        assertTrue(BalancedBrackets.hasBalancedBrackets(someString));
+        String testData = "[]".repeat(randomNum.nextInt(10));
+        boolean result = BalancedBrackets.hasBalancedBrackets(testData);
+        assertTrue(spec, result);
     }
 
     @Test // #6 - String with random number of unbalanced brackets
